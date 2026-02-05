@@ -16,4 +16,15 @@ days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
 study_hours = [1,2,3,4,5,6,7]
 litres_of_water = [1,2,3,4,5,6,7]
 exercise_mins = [10,15,30,35,45,50,60]
+ 
+# Now we are going to combine the separate lists into a pandas dataframe
+data = {
+    "Day": days,
+    "Study Hours" : study_hours,
+    "Water(litres)": litres_of_water,
+    "Exercise(min)": exercise_mins
+}
+df = pd.DataFrame(data)
+st.dataframe(df)
+
 
