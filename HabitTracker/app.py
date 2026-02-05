@@ -14,8 +14,8 @@ days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
    
 # now creating a list for all the other columns 
 study_hours = [1,2,3,4,5,6,7]
-litres_of_water = [1,2,3,4,5,6,7]
-exercise_mins = [10,15,30,35,45,50,60]
+litres_of_water = [4,5,3,1,2,6,7]
+exercise_mins = [10,5,30,35,45,50,60]
  
 # Now we are going to combine the separate lists into a pandas dataframe
 data = {
@@ -29,16 +29,21 @@ st.dataframe(df)
 
 fig, ax = plt.subplots()
 
-#X-axis = days
-#Y-axis = Study hours
 
 #Plotting the data
-ax.plot(df["Day"],df["Study Hours"],marker="o")
+ax.plot(df["Day"],df["Study Hours"],marker="o", label="Study Hours")
+ax.plot(df["Day"], df["Water(litres)"], marker="o", label="Water")
+ax.plot(df["Day"], df["Exercise(min)"], marker="o", label="Exercise")
+
 
 
 #Label the chart
 ax.set_xlabel("Day")
-ax.set_ylabel("Study Hours")
-ax.set_title("Study Hours Over The Week")
+ax.set_ylabel("Amount")
+
+# ax.set_ylabel("Water(litres)")
+ax.set_title("Weekly Habit Tracker")
+
+ax.legend()
 
 st.pyplot(fig)
