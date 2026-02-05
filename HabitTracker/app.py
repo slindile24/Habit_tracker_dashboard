@@ -27,4 +27,18 @@ data = {
 df = pd.DataFrame(data)
 st.dataframe(df)
 
+fig, ax = plt.subplots()
 
+#X-axis = days
+#Y-axis = Study hours
+
+#Plotting the data
+ax.plot(df["Day"],df["Study Hours"],marker="o")
+
+
+#Label the chart
+ax.set_xlabel("Day")
+ax.set_ylabel("Study Hours")
+ax.set_title("Study Hours Over The Week")
+
+st.pyplot(fig)
