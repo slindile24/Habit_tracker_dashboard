@@ -47,3 +47,17 @@ ax.set_title("Weekly Habit Tracker")
 ax.legend()
 
 st.pyplot(fig)
+
+total_study_hours = df["Study Hours"].sum()
+total_litres_of_water = df["Water(litres)"].sum()
+total_exercise = df["Exercise(min)"].sum()
+
+labels = ["Study Hours", "Water(litres)", "Exercise(min)"]
+totals = [total_study_hours,total_litres_of_water,total_exercise]
+
+fig2, ax2 = plt.subplots()
+ax2.bar(labels, totals, color=["pink","red","green"])
+ax2.set_ylabel("Weekly Total")
+
+ax2.set_title("Total Habits This Week")
+st.pyplot(fig2)
