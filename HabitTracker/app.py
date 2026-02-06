@@ -56,7 +56,7 @@ labels = ["Study Hours", "Water(litres)", "Exercise(min)"]
 totals = [total_study_hours,total_litres_of_water,total_exercise]
 
 fig2, ax2 = plt.subplots()
-ax2.bar(labels, totals, color=["pink","red","green"])
+ax2.bar(labels, totals, color=["blue","orange","green"])
 ax2.set_ylabel("Weekly Total")
 
 ax2.set_title("Total Habits This Week")
